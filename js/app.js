@@ -127,7 +127,7 @@ function init() {
   getChofs();
   
   $("#submit").on("click", addChof);
-  table.on('click', 'button.update', getPChof);
+  table.on('click', 'button.update', getChof);
   table.on('click', 'button.delete', deleteChof);
 }
 
