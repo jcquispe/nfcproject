@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>NFC</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+</head>
+<body>
+  <h3 class="center">Choferes</h3>
+  <div class="row">
+    <table class="table table-hover" id="tabla">
+      <thead>
+        <tr>
+          <th>CI</th>
+          <th>NOMBRES</th>
+          <th>APELLIDOS</th>
+          <th>TELEFONO</th>
+          <th>SINDICATO</th>
+          <th>ACCIONES</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  
+  <div class="row">
+    <form class="col sm-12 l6 offset-l3">
+      <input type="text" id="ci" placeholder="Nro de CI">
+      <input type="text" id="nombres" placeholder="Nombres">
+      <input type="text" id="apellidos" placeholder="Apellidos">
+      <input type="text" id="telefono" placeholder="Teléfono o celular">
+      <input type="text" id="sindicato" placeholder="Sindicato al cual pertenece">
+      <button class="btn" type="submit" id="submit">GUARDAR</button>
+      <button id="cancel" class="btn grey darken-1 white-text">CANCELAR</button>
+    </form>
+  </div>
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAQn2hzpaiu-M1Y-Vv_-U8zcXTXmg159Qo",
+    authDomain: "nfc-project-2f382.firebaseapp.com",
+    databaseURL: "https://nfc-project-2f382.firebaseio.com",
+    projectId: "nfc-project-2f382",
+    storageBucket: "nfc-project-2f382.appspot.com",
+    messagingSenderId: "646288938812"
+  };
+  firebase.initializeApp(config);
+</script>
+  <script src="js/app.js"></script>  
+</body>
+</html>
