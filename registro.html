@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Registro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+</head>
+<body>
+	
+	
+  <nav class="teal darken-1">
+  <!-- === SideBar === -->
+  <ul id="slide-out" class="side-nav">
+    <li><a href="registro.html">Empadronar</a></li>
+    <li><a href="listado.html">Listado general</a></li>
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <a class="collapsible-header">Seguimiento<i class="mdi-navigation-arrow-drop-down"></i></a>
+          <div class="collapsible-body">
+            <ul>
+              <li><a href="#!">Trayectoria</a></li>
+              <li><a href="#!">Usuarios</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <!-- === NavBar === -->
+  <ul class="left hide-on-med-and-down">
+    <li><a href="registro.html">Empadronar</a></li>
+    <li><a href="listado.html">Listado general</a></li>
+    <li><a class="dropdown-button" href="#!" data-activates="d1">Seguimiento<i class="mdi-navigation-arrow-drop-down right"></i></a>
+      <ul id='d1' class='dropdown-content'>
+        <li><a href="#!">Trayectoria</a></li>
+        <li><a href="#!">Usuarios</a></li>
+      </ul>
+    </li>
+  </ul>
+  
+  <!-- === NavBar Derecha === -->
+  <ul class="right">
+    <li><a class="dropdown-button" href="#!" data-activates="d2">Mi cuenta<i class="mdi-navigation-arrow-drop-down right"></i></a>
+      <ul id='d2' class='dropdown-content'>
+        <li><a href="#">Perfil</a></li>
+        <li><a id="salir" onclick=salir()>Salir</a></li>
+      </ul>
+    </li>
+  </ul>
+  <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+</nav>
+	        
+
+  <h3 class="center">Empadronamiento</h3>
+
+<div class="row">
+    <form class="col s12 m8 offset-m2">
+      <p>Para registrar un nuevo conductor y su vehículo, llene el siguiente formulario. Todos los campos son obligatorios.</p>
+      <div class="input-field">
+          <i class="material-icons prefix">nfc</i>
+            <input id="codigo" type="text" class="validate">
+            <label for="codigo">Código NFC</label>
+        </div>
+      <div class="col s12 m6">
+        <h5>Datos del conductor</h5>
+        <div class="input-field">
+          <i class="material-icons prefix">card_membership</i>
+            <input id="ci" type="text" class="validate">
+            <label for="ci">Numero de CI</label>
+        </div>
+        <div class="input-field">
+          <i class="material-icons prefix">account_circle</i>
+            <input id="nombres" type="text" class="validate">
+            <label for="nombres">Nombres</label>
+        </div>
+        <div class="input-field">
+          <i class="material-icons prefix">account_circle</i>
+            <input id="apellidos" type="text" class="validate">
+            <label for="apellidos">Apellidos</label>
+        </div>
+        <div class="input-field">
+          <i class="material-icons prefix">phone</i>
+            <input id="telefono" type="text" class="validate">
+            <label for="telefono">Teléfono o celular</label>
+        </div>
+
+	    <div class="file-field input-field">
+	      <div class="btn">
+	        <span>Foto</span>
+	        <input type="file">
+	      </div>
+	      <div class="file-path-wrapper" style="margin-left:5px;">
+	        <input class="file-path validate" type="text" placeholder="Fotografía del conductor" disabled>
+	      </div>
+	    </div>
+
+      </div>
+      <div class="col s12 m6">
+        <h5>Datos del vehículo</h5>
+        <div class="input-field">
+          <i class="material-icons prefix">local_taxi</i>
+            <input id="marca" type="text" class="validate">
+            <label for="marca">Marca</label>
+        </div>
+        <div class="input-field">
+          <i class="material-icons prefix">local_taxi</i>
+            <input id="modelo" type="text" class="validate">
+            <label for="modelo">Módelo</label>
+        </div>
+        <div class="input-field">
+          <i class="material-icons prefix">featured_play_list</i>
+            <input id="placa" type="text" class="validate">
+            <label for="placa">Placa PTA (Ej 1234ABC)</label>
+        </div>
+        <div class="input-field">
+          <i class="material-icons prefix">texture</i>
+            <input id="color" type="text" class="validate">
+            <label for="color">Color</label>
+        </div>
+        <!--div class="input-field">
+        	<i class="material-icons prefix">texture</i>
+		    <select  id="color" multiple>
+		      <option value="" disabled selected>Elije la o las opciones necesarias</option>
+		      <option value="ROJO">Rojo</option>
+		      <option value="AMARILLO">Amarillo</option>
+		      <option value="AZUL">Azul</option>
+		      <option value="BLANCO">Blanco</option>
+		      <option value="VERDE">Verde</option>
+		      <option value="NEGRO">Negro</option>
+		      <option value="CAFE">Café</option>
+		      <option value="CELESTE">Celeste</option>
+		      <option value="NARANJA">Naranja</option>
+		      <option value="GUINDO">Guindo</option>
+		      <option value="DORADO">Dorado</option>
+			  <option value="PLATEADO">Plateado</option>
+			  <option value="MORADO">Morado</option>
+			  <option value="PLOMO">Plomo</option>
+		    </select>
+		    <label>Color</label>
+		</div-->
+        <div class="input-field">
+          <i class="material-icons prefix">store</i>
+            <input id="sindicato" type="text" class="validate">
+            <label for="sindicato">Sindicato</label>
+        </div>
+      </div>
+      <div class="col s12 center">
+        <button class="btn" type="submit" id="submit">GUARDAR</button>
+        <button id="cancel" class="btn grey darken-1 white-text">CANCELAR</button>
+      </div>
+    </form>
+  </div>
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+  <script src="js/scripts.js"></script> 
+
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAQn2hzpaiu-M1Y-Vv_-U8zcXTXmg159Qo",
+    authDomain: "nfc-project-2f382.firebaseapp.com",
+    databaseURL: "https://nfc-project-2f382.firebaseio.com",
+    projectId: "nfc-project-2f382",
+    storageBucket: "nfc-project-2f382.appspot.com",
+    messagingSenderId: "646288938812"
+  };
+  firebase.initializeApp(config);
+</script>
+  <script src="js/app.js"></script>  
+</body>
+</html>
