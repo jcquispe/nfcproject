@@ -8,7 +8,7 @@ var choferes_ref = db.ref('choferes');
 var table = $('table tbody');
 setTimeout(function() {
   var oTable = $('#tabla').DataTable();
-}, 2000);
+}, 3000);
 
 
 function getFormData() {
@@ -42,7 +42,7 @@ function addChof(event) {
   event.preventDefault();
   if(validar()){
     var chof = getFormData();
-    choferes_ref.push(chof);
+    choferes_ref.child(chof.codigo).set(chof);
     $('form input').val('');
     Materialize.updateTextFields();
   }
